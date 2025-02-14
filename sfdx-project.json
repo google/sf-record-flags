@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "record-flags",
+      "default": true
+    }
+  ],
+  "name": "recordFlags",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "62.0"
+}

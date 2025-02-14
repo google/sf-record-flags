@@ -1,0 +1,96 @@
+<!--
+ Copyright 2025 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+ 
+<template>
+  <template if:true={loading}>
+    <div
+      class="spinner-container-outer slds-is-relative"
+      style="position: relative"
+    >
+      <lightning-spinner variant="base" size="xx-small"></lightning-spinner>
+    </div>
+  </template>
+  <template if:false={loading}>
+    <template if:true={haveFlags}>
+      <template for:each={listOfRecordFlags} for:item="flag">
+        <!-- FLAG title -->
+        <div
+          key={flag.key}
+          style="margin: 5px"
+          class={flag.varientCSS}
+          onmouseover={handleMouseOver}
+          onmouseout={handleMouseOut}
+          onclick={handleBadgeClick}
+          data-div-id={flag.key}
+        >
+          {flag.title}
+        </div>
+        <!-- FLAG POPOVER -->
+        <template if:true={flag.showDetails}>
+          &nbsp;&nbsp;
+          <section
+            key={flag.key}
+            aria-label="Dialog Title"
+            class="slds-popover slds-nubbin_left-top slds-popover_small section-css"
+            role="dialog"
+          >
+            <button
+              data-div-id={flag.key}
+              class="slds-button slds-button_icon slds-button_icon-small slds-float_right slds-popover__close"
+              title="Close dialog"
+              onclick={handlePopOverCancel}
+            >
+              <lightning-icon
+                icon-name="utility:close"
+                alternative-text="close"
+                variant="error"
+                size="xx-small"
+              ></lightning-icon>
+              <span class="slds-assistive-text">Close</span>
+            </button>
+            <!-- FLAG BODY -->
+            <template if:true={flag.body}>
+              <div class="slds-popover__body">
+                <div class="slds-media">
+                  <div class="slds-media__body">
+                    <p>{flag.body}</p>
+                  </div>
+                </div>
+              </div>
+            </template>
+            <!-- FLAG BUTTONS -->
+            <template if:true={flag.hasButtons}>
+              <footer class="slds-popover__footer">
+                <div class="slds-button-group-row button-group-div-css">
+                  <template for:each={flag.buttons} for:item="button">
+                    <a
+                      key={button.key}
+                      class="slds-button slds-button_neutral slds-col_bump-left button-css"
+                      target={button.target}
+                      href={button.url}
+                      >{button.name}</a
+                    >
+                  </template>
+                </div>
+              </footer>
+            </template>
+          </section>
+          &nbsp;&nbsp;
+        </template>
+      </template>
+    </template>
+  </template>
+</template>

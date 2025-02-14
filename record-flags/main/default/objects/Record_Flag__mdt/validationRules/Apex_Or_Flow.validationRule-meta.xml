@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apex_Or_Flow</fullName>
+    <active>true</active>
+    <description>Validates that the Record Flag either provides information regarding an Apex or Flow used to calculate the flag.</description>
+    <errorConditionFormula>
+      OR(
+        AND(
+          ISBLANK(Apex_Class_Name__c),
+          ISBLANK(Flow_Name__c)
+        ),
+        AND(
+          NOT(ISBLANK(Apex_Class_Name__c)),
+          NOT(ISBLANK(Flow_Name__c))
+        ) 
+      )
+    </errorConditionFormula>
+    <errorMessage>An Apex Class or Flow must be provided, but not both.</errorMessage>
+</ValidationRule>

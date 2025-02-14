@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Data_Fetcher__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that the Apex class implements RecordsFlags.SharedData and is used for returning data shared by other Fetcher classes. There should only be one Shared Data Fetcher per Object.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Indicates that the Apex class implements RecordsFlags.SharedData and is used for returning data shared by other Fetcher classes. There should only be one Shared Data Fetcher per Object.</inlineHelpText>
+    <label>Is Shared Data Fetcher?</label>
+    <type>Checkbox</type>
+</CustomField>
