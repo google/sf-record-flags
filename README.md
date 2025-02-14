@@ -238,3 +238,9 @@ will automatically pull in the proper metadata definitions and invoke the Apex
 classes to calculate which flags to render.
 
 Internally, this LWC relies on child `recordFlagFetcher` component that handle the calls to render each fetcher in its own transaction to avoid system limits. This can be helpful when there are multiple flags that are making slow, expensive computations (such as callouts to other systems).
+
+## Notes
+
+This is not an officially supported Google product. This project is not
+eligible for the [Google Open Source Software Vulnerability Rewards
+Program](https://bughunters.google.com/open-source-security).
