@@ -2,11 +2,19 @@
   "packageDirectories": [
     {
       "path": "record-flags",
-      "default": true
+      "package": "Record Flags",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "default": true,
+      "versionDescription": ""
     }
   ],
   "name": "recordFlags",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "62.0"
+  "sourceApiVersion": "65.0",
+  "packageAliases": {
+    "Record Flags": "0Hoaj0000001DeLCAU",
+    "Record Flags@1.0.0": "04taj000000HekDAAS"
+  }
 }

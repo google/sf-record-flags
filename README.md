@@ -6,7 +6,9 @@ The Record Flags framework allows for developers to easily surface important inf
 
 ## Installation
 
-TODO: Add install links after approval for OSS launch.
+#### [Unlocked Package Installation (Production)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04taj000000HekDAAS)
+
+#### [Unlocked Package Installation (Sandbox)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04taj000000HekDAAS)
 
 ## Setup
 
